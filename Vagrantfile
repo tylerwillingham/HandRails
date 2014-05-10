@@ -12,6 +12,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network 'forwarded_port', guest: 3000, host: 3000
   # TODO: Port forwarding for PostgreSQL
 
+  # I'm seeing a bug with build-essential in Chef 10 under Vagrant so here I'm
+  # specifying the latest version of Chef to avoid this.
+  config.omnibus.chef_version = :latest
+
   config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = 'cookbooks'
 
