@@ -1,6 +1,7 @@
 *.idea/
 *._*
 *.DS_Store
+tmp
 
 # Chef
 cookbooks
