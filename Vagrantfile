@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network 'forwarded_port', guest: 3000, host: 3000
   # TODO: Port forwarding for PostgreSQL
 
-  config.vm.provision = :chef_solo do |chef|
+  config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = 'cookbooks'
 
     chef.add_recipe 'apt'
